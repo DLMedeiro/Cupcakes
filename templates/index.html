@@ -1,0 +1,46 @@
+{%extends 'base.html'%}
+
+{%block title%}Home Page{%endblock%}
+
+{%block content%}
+
+<div class="container">
+    <h1>The Cupcake Shop</h1>
+
+    <div class="container">
+        <h2>All Cupcakes</h2>
+        <!-- <button class="btn btn-primary"
+        id="getlist"> Get Cupcake </button> -->
+        <ul id="cupcake-list"></ul>
+    </div>
+    
+    <div class="container">
+        <!-- <!-- <h2>Add A New Cupcake</h2> -->
+   
+        <form method = "POST" id="newCupcakeForm">
+            {{form.hidden_tag()}}
+            {% for field in form if field.widget.input_type !='hidden'%}
+            
+            <p>
+                {{field.label}}
+                {{field(class = "form-control")}}
+                
+                {%for error in field.errors%}
+                {{error}}
+                {%endfor%}
+            </p> 
+            
+            {%endfor%}
+            
+            <button id = "submitNewCupcake" class="btn btn-primary btn-lg">Submit</button>
+            
+        </form>
+        
+    </div>
+    
+</div>
+
+
+{%endblock%}
+
+{%block footer%} <a href="/">Home</a> {%endblock%}
