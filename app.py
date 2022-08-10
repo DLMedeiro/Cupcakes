@@ -1,12 +1,18 @@
+import os
+from dotenv import load_dotenv
 from flask import Flask, request, render_template, redirect, flash, session, jsonify
 from flask_debugtoolbar import DebugToolbarExtension
 from models import db, connect_db, Cupcake
 from flask_sqlalchemy import SQLAlchemy
 from forms import AddCupcakeForm
 
+load_dotenv()
+
+password = os.getenv('PASSWORD')
+
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///cupcakes'
+app.config['SQLALCHEMY_DATABASE_URI'] = f'postgresql://postgres:{password}@localhost:5432/cupcakes'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_ECHO'] = True
 

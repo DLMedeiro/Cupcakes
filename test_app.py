@@ -1,10 +1,17 @@
+import os
+from dotenv import load_dotenv
+
 from unittest import TestCase
 
 from app import app
 from models import db, Cupcake
 
+load_dotenv()
+
+password = os.getenv('PASSWORD')
+
 # Use test database and don't clutter tests with SQL
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///cupcakes_test'
+app.config['SQLALCHEMY_DATABASE_URI'] = f'postgresql://postgres:{password}@localhost:5432/cupcakes_test'
 app.config['SQLALCHEMY_ECHO'] = False
 
 # Make Flask errors be real errors, rather than HTML pages with error info
