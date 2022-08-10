@@ -1,5 +1,7 @@
 # Cupcakes
 
+HTML/JS Front end application using a JSON API to generate a list of cupcakes which can be mofified and added to.
+
 ## Check it out at: 
 
 https://dlmedeiro.github.io/Cupcakes/
