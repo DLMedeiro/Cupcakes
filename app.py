@@ -10,8 +10,9 @@ load_dotenv()
 
 app = Flask(__name__)
 
-password = os.getenv('PASSWORD')
-uri = f'postgresql://postgres:{password}@localhost:5432/cupcakes'
+# password = os.getenv('PASSWORD')
+uri = os.getenv('URI')
+secret_key = os.getenv(SECRET_KEY)
 
 if uri.startswith("postgres://"):
     uri = uri.replace("postgres://", "postgresql://", 1)
@@ -24,7 +25,7 @@ app.config['SQLALCHEMY_ECHO'] = True
 connect_db(app)
 db.create_all()
 
-app.config['SECRET_KEY'] = "cupcakes"
+app.config['SECRET_KEY'] = secret_key
 app.config['DEBUG_TB_INTERCEPT_REDIRECTS'] = False
 debug = DebugToolbarExtension(app)
 
