@@ -1,4 +1,5 @@
 import os
+import psycopg2
 from dotenv import load_dotenv
 from flask import Flask, request, render_template, redirect, flash, session, jsonify
 from flask_debugtoolbar import DebugToolbarExtension
@@ -11,14 +12,14 @@ load_dotenv()
 app = Flask(__name__)
 
 # password = os.getenv('PASSWORD')
-uri = os.getenv('URI')
+DATABASE_URL = os.getenv('DATABASE_URL')
 secret_key = os.getenv('SECRET_KEY')
 
 if uri.startswith("postgres://"):
     uri = uri.replace("postgres://", "postgresql://", 1)
 
-
-app.config['SQLALCHEMY_DATABASE_URI'] = uri
+conn = psycopg2.connect(DATABASE_URL, sslmode = 'require')
+app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_URL
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_ECHO'] = True
 
