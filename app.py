@@ -8,11 +8,16 @@ from forms import AddCupcakeForm
 
 load_dotenv()
 
-password = os.getenv('PASSWORD')
-
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = f'postgresql://postgres:{password}@localhost:5432/cupcakes'
+password = os.getenv('PASSWORD')
+uri = f'postgresql://postgres:{password}@localhost:5432/cupcakes'
+
+if uri.startswith("postgres://"):
+    uri = uri.replace("postgres://", "postgresql://", 1)
+
+
+app.config['SQLALCHEMY_DATABASE_URI'] = uri
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_ECHO'] = True
 
