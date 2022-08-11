@@ -12,7 +12,7 @@ app = Flask(__name__)
 
 # password = os.getenv('PASSWORD')
 uri = os.getenv('URI')
-secret_key = os.getenv(SECRET_KEY)
+secret_key = os.getenv('SECRET_KEY')
 
 if uri.startswith("postgres://"):
     uri = uri.replace("postgres://", "postgresql://", 1)
