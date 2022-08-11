@@ -1,6 +1,6 @@
 # Cupcakes
 
-HTML/JS Front end application using a JSON API to generate a list of cupcakes which can be mofified and added to.
+HTML/JS Front end application using a JSON API to generate a list of cupcakes which can be modified and added to.
 
 ## Check it out at: 
 
@@ -82,4 +82,4 @@ This will raise a 404 if the cupcake cannot be found.
 
 ## Technologies used
 
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" height = 50px width=50px/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" height = 50px width=50px/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height = 50px width=50px/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-plain-wordmark.svg" height = 50px width=50px//> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-plain-wordmark.svg" height = 50px width=50px//>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" height = 50px width=50px/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" height = 50px width=50px/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height = 50px width=50px/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-plain-wordmark.svg" height = 50px width=50px//> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-plain-wordmark.svg" height = 50px width=50px//> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original-wordmark.svg" height = 50px width=50px/>
