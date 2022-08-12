@@ -12,7 +12,7 @@ load_dotenv()
 app = Flask(__name__)
 
 # password = os.getenv('PASSWORD')
-DATABASE_URL = os.getenv('DATABASE_URL')
+DATABASE_URL = os.getenv('URI')
 secret_key = os.getenv('SECRET_KEY')
 
 if DATABASE_URL.startswith("postgres://"):
