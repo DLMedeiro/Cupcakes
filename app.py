@@ -12,14 +12,13 @@ load_dotenv()
 app = Flask(__name__)
 
 # password = os.getenv('PASSWORD')
-DATABASE_URL = os.getenv('URI')
+uri = os.getenv('DATABASE_URL')
 secret_key = os.getenv('SECRET_KEY')
 
-if DATABASE_URL.startswith("postgres://"):
-    DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql://", 1)
+if uri.startswith("postgres://"):
+    uri = uri.replace("postgres://", "postgresql://", 1)
 
-conn = psycopg2.connect(DATABASE_URL, sslmode = 'require')
-app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_URL
+app.config['SQLALCHEMY_DATABASE_URI'] = uri
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_ECHO'] = True
 
