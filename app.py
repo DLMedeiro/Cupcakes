@@ -2,7 +2,7 @@ import os
 import psycopg2
 from dotenv import load_dotenv
 from flask import Flask, request, render_template, redirect, flash, session, jsonify
-from flask_cors import CORS
+
 from flask_debugtoolbar import DebugToolbarExtension
 from models import db, connect_db, Cupcake
 from flask_sqlalchemy import SQLAlchemy
@@ -11,7 +11,7 @@ from forms import AddCupcakeForm
 load_dotenv()
 
 app = Flask(__name__)
-CORS(app)
+
 # password = os.getenv('PASSWORD')
 uri = os.getenv('DATABASE_URL')
 secret_key = os.getenv('SECRET_KEY')
