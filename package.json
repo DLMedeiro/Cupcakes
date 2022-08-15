@@ -1,0 +1,28 @@
+{
+  "name": "flask_cupcakes",
+  "version": "1.0.0",
+  "description": "HTML/JS Front end application using a JSON API to generate a list of cupcakes which can be modified and added to.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DLMedeiro/Cupcakes.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DLMedeiro/Cupcakes/issues"
+  },
+  "homepage": "https://github.com/DLMedeiro/Cupcakes#readme",
+  "dependencies": {
+    "@babel/core": "^7.18.10",
+    "babel-loader": "^8.2.5",
+    "dotenv": "^16.0.1",
+    "require": "^2.4.20",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
+  }
+}

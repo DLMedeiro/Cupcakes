@@ -1,6 +1,10 @@
 // baseHtml = "http://127.0.0.1:5000"
 
-baseUrl = "https://cupcake-house.herokuapp.com/" || "http://localhost:3001"
+baseUrl = "http://127.0.0.1:5000/"
+// baseUrl = "https://cupcake-house.herokuapp.com/" || "http://127.0.0.1:5000/"
+
+// require('dotenv').config();
+// const baseUrl = process.env.BASE_URL
 
 
 function cupcakeHtml(cupcake) {
@@ -18,7 +22,7 @@ function cupcakeHtml(cupcake) {
 }
 
 async function getCupcakes() {
-    const response = await axios.get(`${baseUrl}/api/cupcakes`);
+    const response = await axios.get(`${baseUrl}api/cupcakes`);
 
     for (let cupcake of response.data.cupcakes) {
         let lineItem = $(cupcakeHtml(cupcake));
@@ -36,7 +40,7 @@ $("#newCupcakeForm").on("submit", async function (e){
     let rating = $("#rating").val();
     let image = $("#image").val();
     
-    const newCupcakeResponse = await axios.post(`${baseUrl}/api/cupcakes`, {flavor, size, rating, image});
+    const newCupcakeResponse = await axios.post(`${baseUrl}api/cupcakes`, {flavor, size, rating, image});
     
     let newCupcake = $(cupcakeHtml(newCupcakeResponse.data.cupcake));
     $("#cupcake-list").append(newCupcake);
@@ -48,7 +52,7 @@ $("#cupcake-list").on("click", ".delete-button", async function (e){
     let $cupcake = $(e.target).closest("div");
     let cupcakeId = $cupcake.attr("data-cupcake-id");
 
-    await axios.delete(`${baseUrl}//api/cupcakes/${cupcakeId}`)
+    await axios.delete(`${baseUrl}api/cupcakes/${cupcakeId}`)
     $cupcake.remove();
 });
 
