@@ -4,7 +4,7 @@ HTML/JS Front end application using a JSON API to generate a list of cupcakes wh
 
 ## Check it out at: 
 
-https://dlmedeiro.github.io/Cupcakes/
+https://cupcake-house.herokuapp.com/
 
 ## Setup
 
